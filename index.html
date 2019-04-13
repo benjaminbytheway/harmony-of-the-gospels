@@ -7,10 +7,16 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./diff2html.min.css">
 
-    <script src="diff2html.min.js"></script>
-    <script src="diff2html-ui.min.js"></script>
+    <script src="./jsdiff.js"></script>
+    <script>
+      function grow(e) {
+        e.currentTarget.className += ' expanded';
+      }
+      function shrink(e) {
+        e.currentTarget.className = e.currentTarget.className.replace(' expanded', '');
+      }
+    </script>
 
   </head>
   <body>
@@ -49,26 +55,222 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382493" id="p9">Prologue (premortal life and John’s testimony)</p>
     				</td>
     				<td></td>
     				<td>
-    					<p data-aid="128382494" id="p10"><a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/matt/1.html?verse=1#p1">1:1</a></p>
+    					<p data-aid="128382494" id="p10">
+                <a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/matt/1.html?verse=1#p1">1:1</a>
+                <div>1 The book of the generation of Jesus Christ, the son of David, the son of Abraham.</div>
+              </p>
     				</td>
     				<td>
-    					<p data-aid="128382495" id="p11"><a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/mark/1.html?verse=1#p1">1:1</a></p>
+    					<p data-aid="128382495" id="p11">
+                <a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/mark/1.html?verse=1#p1">1:1</a>
+                <div>1 The beginning of the gospel of Jesus Christ, the Son of God;</div>
+              </p>
     				</td>
     				<td>
-    					<p data-aid="128382496" id="p12"><a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/luke/1.html?verse=1-4#p1">1:1–4</a></p>
+    					<p data-aid="128382496" id="p12">
+                <a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/luke/1.html?verse=1-4#p1">1:1–4</a>
+                <div>
+                  1 Forasmuch as many have taken in hand to set forth in order a declaration of those things which are most surely believed among us,
+
+                  2 Even as they delivered them unto us, which from the beginning were eyewitnesses, and ministers of the word;
+
+                  3 It seemed good to me also, having had perfect understanding of all things from the very first, to write unto thee in order, most excellent Theophilus,
+
+                  4 That thou mightest know the certainty of those things, wherein thou hast been instructed.
+                </div>
+              </p>
     				</td>
     				<td>
-    					<p data-aid="128382497" id="p13"><a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/john/1.html?verse=1-18#p1">1:1–18</a></p>
+    					<p data-aid="128382497" id="p13">
+                <a class="scripture-ref" href="https://churchofjesuschrist.org/scriptures/nt/john/1.html?verse=1-18#p1">1:1–18</a>
+                <div>
+                  1 In the beginning was the Word, and the Word was with God, and the Word was God.
+
+                  2 The same was in the beginning with God.
+
+                  3 All things were made by him; and without him was not any thing made that was made.
+
+                  4 In him was life; and the life was the light of men.
+
+                  5 And the light shineth in darkness; and the darkness comprehended it not.
+
+                  6 ¶ There was a man sent from God, whose name was John.
+
+                  7 The same came for a witness, to bear witness of the Light, that all men through him might believe.
+
+                  8 He was not that Light, but was sent to bear witness of that Light.
+
+                  9 That was the true Light, which lighteth every man that cometh into the world.
+
+                  10 He was in the world, and the world was made by him, and the world knew him not.
+
+                  11 He came unto his own, and his own received him not.
+
+                  12 But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:
+
+                  13 Which were born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.
+
+                  14 And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.
+
+                  15 ¶ John bare witness of him, and cried, saying, This was he of whom I spake, He that cometh after me is preferred before me: for he was before me.
+
+                  16 And of his fulness have all we received, and grace for grace.
+
+                  17 For the law was given by Moses, but grace and truth came by Jesus Christ.
+
+                  18 No man hath seen God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.
+                </div>
+              </p>
     				</td>
     				<td></td>
     			</tr>
+          <tr class="diff diff-matthew-mark" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Matthew & Mark</td>
+            <td></td>
+            <td>
+              <div>
+                <script>
+                  document.write(
+                    diffString(
+                      '1 The beginning of the gospel of Jesus Christ, the Son of God;',
+                      '1 The book of the generation of Jesus Christ, the son of David, the son of Abraham.'
+                    )
+                  );
+                </script>
+              </div>
+            </td>
+            <td>
+              <div>
+                <script>
+                  document.write(
+                    diffString(
+                      '1 The book of the generation of Jesus Christ, the son of David, the son of Abraham.',
+                      '1 The beginning of the gospel of Jesus Christ, the Son of God;'
+                    )
+                  );
+                </script>
+              </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-matthew-luke" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Matthew & Luke</td>
+            <td></td>
+            <td>
+              <div>
+                <script>
+                  document.write(
+                    diffString(
+                      `1 Forasmuch as many have taken in hand to set forth in order a declaration of those things which are most surely believed among us,
+                      2 Even as they delivered them unto us, which from the beginning were eyewitnesses, and ministers of the word;
+                      3 It seemed good to me also, having had perfect understanding of all things from the very first, to write unto thee in order, most excellent Theophilus,
+                      4 That thou mightest know the certainty of those things, wherein thou hast been instructed.`,
+                      '1 The book of the generation of Jesus Christ, the son of David, the son of Abraham.'
+                    )
+                  );
+                </script>
+              </div>
+            </td>
+            <td></td>
+            <td>
+              <div>
+                <script>
+                  document.write(
+                    diffString(
+                      '1 The book of the generation of Jesus Christ, the son of David, the son of Abraham.',
+                      `1 Forasmuch as many have taken in hand to set forth in order a declaration of those things which are most surely believed among us,
+                      2 Even as they delivered them unto us, which from the beginning were eyewitnesses, and ministers of the word;
+                      3 It seemed good to me also, having had perfect understanding of all things from the very first, to write unto thee in order, most excellent Theophilus,
+                      4 That thou mightest know the certainty of those things, wherein thou hast been instructed.`
+                    )
+                  );
+                </script>
+              </div>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-matthew-john" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Matthew & John</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-matthew-latter-day" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Matthew & Latter-day</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-mark-luke" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Mark & Luke</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-mark-john" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Mark & John</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-mark-latter-day" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Mark & Latter-day</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-luke-john" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Luke & John</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-luke-latter-day" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff Luke & Latter-day</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="diff diff-john-latter-day" onmouseover="grow(event)" onmouseout="shrink(event);">
+            <td>Diff John & Latter-day</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382498" id="p14">The genealogies</p>
     				</td>
     				<td></td>
@@ -83,7 +285,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382501" id="p17">Annunciation to Zacharias</p>
     				</td>
     				<td>
@@ -100,7 +302,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382505" id="p21">Elisabeth’s seclusion</p>
     				</td>
     				<td>
@@ -115,7 +317,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382508" id="p24">Annunciation to Mary</p>
     				</td>
     				<td>
@@ -132,7 +334,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382512" id="p28">Mary visits Elisabeth</p>
     				</td>
     				<td>
@@ -147,7 +349,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382515" id="p31">Birth of John, naming, and prophesy</p>
     				</td>
     				<td>
@@ -164,7 +366,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382519" id="p35">Annunciation to Joseph</p>
     				</td>
     				<td>
@@ -179,7 +381,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382522" id="p38">Joseph and Mary go to be registered</p>
     				</td>
     				<td>
@@ -194,7 +396,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382525" id="p41">Birth of Jesus</p>
     				</td>
     				<td>
@@ -211,7 +413,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382529" id="p45">Annunciation to the shepherds</p>
     				</td>
     				<td>
@@ -226,7 +428,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382532" id="p48">Naming of Jesus and presentation in the temple</p>
     				</td>
     				<td>
@@ -245,7 +447,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382537" id="p53">Visit of the wise men</p>
     				</td>
     				<td>
@@ -260,7 +462,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382540" id="p56">Flight to Egypt</p>
     				</td>
     				<td></td>
@@ -273,7 +475,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382542" id="p58">Slaughter of the infants</p>
     				</td>
     				<td>
@@ -288,7 +490,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382545" id="p61">From Egypt to Nazareth</p>
     				</td>
     				<td>
@@ -305,7 +507,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382549" id="p65">Visit to the temple (Passover)</p>
     				</td>
     				<td>
@@ -320,7 +522,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382552" id="p68"><span class="page-break" data-page="757"></span>The return to Nazareth</p>
     				</td>
     				<td>
@@ -369,7 +571,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381331" id="p9">Isaiah’s prophecy of John</p>
     				</td>
     				<td></td>
@@ -388,7 +590,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381336" id="p14">The beginning of John’s ministry</p>
     				</td>
     				<td>
@@ -409,7 +611,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381342" id="p20">Warning to Pharisees and Sadducees</p>
     				</td>
     				<td>
@@ -428,7 +630,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381347" id="p25">Call to repentance</p>
     				</td>
     				<td>
@@ -447,7 +649,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381352" id="p30">Baptism of Jesus</p>
     				</td>
     				<td>
@@ -470,7 +672,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381359" id="p37">Temptation of Jesus</p>
     				</td>
     				<td>
@@ -491,7 +693,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381365" id="p43">John the Baptist’s testimony</p>
     				</td>
     				<td>
@@ -508,7 +710,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381369" id="p47">John’s disciples follow Jesus</p>
     				</td>
     				<td>
@@ -523,7 +725,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381372" id="p50">Jesus departs for Galilee</p>
     				</td>
     				<td></td>
@@ -570,7 +772,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382564" id="p9">Marriage at Cana</p>
     				</td>
     				<td>
@@ -585,7 +787,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382567" id="p12">Visit to Capernaum</p>
     				</td>
     				<td>
@@ -634,7 +836,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382579" id="p9">First Passover</p>
     				</td>
     				<td>
@@ -649,7 +851,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382582" id="p12">First cleansing of temple</p>
     				</td>
     				<td>
@@ -664,7 +866,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382585" id="p15">Sign of Jonah</p>
     				</td>
     				<td>
@@ -679,7 +881,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382588" id="p18">Visit of Nicodemus</p>
     				</td>
     				<td>
@@ -694,7 +896,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382591" id="p21">Jesus’ early ministry in Judea</p>
     				</td>
     				<td>
@@ -709,7 +911,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382594" id="p24">John’s ministry and testimony</p>
     				</td>
     				<td>
@@ -724,7 +926,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382597" id="p27">John reproves Herod Antipas</p>
     				</td>
     				<td>
@@ -743,7 +945,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382602" id="p32">John imprisoned and visited by angels</p>
     				</td>
     				<td>
@@ -798,7 +1000,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381383" id="p9">Jesus leaves Judea for Galilee</p>
     				</td>
     				<td></td>
@@ -817,7 +1019,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381388" id="p14">Woman at the well</p>
     				</td>
     				<td>
@@ -832,7 +1034,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381391" id="p17">Jesus returns to Galilee and preaches</p>
     				</td>
     				<td>
@@ -853,7 +1055,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381397" id="p23">Heals the nobleman’s son</p>
     				</td>
     				<td>
@@ -868,7 +1070,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381400" id="p26">Jesus rejected at Nazareth</p>
     				</td>
     				<td>
@@ -883,7 +1085,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381403" id="p29">Dwells in Capernaum</p>
     				</td>
     				<td>
@@ -900,7 +1102,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381407" id="p33">Fishermen called to be fishers of men</p>
     				</td>
     				<td>
@@ -919,7 +1121,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381412" id="p38">Teaches with power and authority</p>
     				</td>
     				<td>
@@ -936,7 +1138,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381416" id="p42">Casts out an unclean spirit</p>
     				</td>
     				<td>
@@ -953,7 +1155,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381420" id="p46">Peter’s mother-in-law healed</p>
     				</td>
     				<td>
@@ -972,7 +1174,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381425" id="p51">Heals in the evening</p>
     				</td>
     				<td>
@@ -993,7 +1195,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381431" id="p57">Preaches the gospel in Galilee</p>
     				</td>
     				<td>
@@ -1012,7 +1214,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381436" id="p62">Heals a leper</p>
     				</td>
     				<td>
@@ -1031,7 +1233,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381441" id="p67">Paralytic healed</p>
     				</td>
     				<td>
@@ -1050,7 +1252,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381446" id="p72">Feast at Matthew’s house</p>
     				</td>
     				<td>
@@ -1069,7 +1271,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381451" id="p77">John’s disciples ask about fasting: Old and new (Pharisees ask about baptism)</p>
     				</td>
     				<td>
@@ -1090,7 +1292,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381457" id="p83">Jesus attends a feast</p>
     				</td>
     				<td>
@@ -1105,7 +1307,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381460" id="p86">Healing on the Sabbath</p>
     				</td>
     				<td>
@@ -1120,7 +1322,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381463" id="p89">Discourse: Witness of the Father</p>
     				</td>
     				<td>
@@ -1135,7 +1337,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381466" id="p92"><span class="page-break" data-page="759"></span>Sabbath controversies</p>
     				</td>
     				<td>
@@ -1154,7 +1356,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381471" id="p97">Twelve called and ordained</p>
     				</td>
     				<td>
@@ -1175,7 +1377,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381477" id="p103">The Sermon on the Mount</p>
     				</td>
     				<td>
@@ -1192,7 +1394,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381481" id="p107">The poor in spirit</p>
     				</td>
     				<td>
@@ -1211,7 +1413,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381487" id="p112">Those who mourn</p>
     				</td>
     				<td>
@@ -1228,7 +1430,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381491" id="p116">The meek</p>
     				</td>
     				<td>
@@ -1245,7 +1447,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381495" id="p120">Hunger and thirst after righteousness</p>
     				</td>
     				<td>
@@ -1262,7 +1464,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381499" id="p124">The merciful</p>
     				</td>
     				<td>
@@ -1279,7 +1481,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381504" id="p128">The pure in heart</p>
     				</td>
     				<td>
@@ -1296,7 +1498,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381513" id="p132">The peacemakers</p>
     				</td>
     				<td>
@@ -1313,7 +1515,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381523" id="p136">Persecuted for righteousness</p>
     				</td>
     				<td>
@@ -1332,7 +1534,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381535" id="p141">Persecuted by false accusers</p>
     				</td>
     				<td>
@@ -1349,7 +1551,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381544" id="p145">The salt of the earth</p>
     				</td>
     				<td>
@@ -1366,7 +1568,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381554" id="p149">“Ye are the light of the world”</p>
     				</td>
     				<td>
@@ -1385,7 +1587,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381566" id="p154">Let your light shine</p>
     				</td>
     				<td>
@@ -1402,7 +1604,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381575" id="p158">The law fulfilled</p>
     				</td>
     				<td>
@@ -1421,7 +1623,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381587" id="p163">Anger: “Thou shalt not kill”</p>
     				</td>
     				<td>
@@ -1440,7 +1642,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381599" id="p168">Adultery, lust</p>
     				</td>
     				<td>
@@ -1457,7 +1659,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382828" id="p172">Divorce</p>
     				</td>
     				<td>
@@ -1476,7 +1678,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382836" id="p177">Swearing an oath: Honesty</p>
     				</td>
     				<td>
@@ -1493,7 +1695,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382843" id="p181">Evil force or generous service</p>
     				</td>
     				<td>
@@ -1510,7 +1712,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382850" id="p185">Love enemies</p>
     				</td>
     				<td>
@@ -1529,7 +1731,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382858" id="p190">Perfect as your Father</p>
     				</td>
     				<td>
@@ -1546,7 +1748,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382864" id="p194">Alms: Notoriety or generosity</p>
     				</td>
     				<td>
@@ -1563,7 +1765,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382871" id="p198"><span class="page-break" data-page="760"></span>Prayer: Hypocrisy or reverence</p>
     				</td>
     				<td>
@@ -1582,7 +1784,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382879" id="p203">Fasting: Hypocrisy or simplicity</p>
     				</td>
     				<td>
@@ -1599,7 +1801,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382886" id="p207">Treasure on earth or in heaven</p>
     				</td>
     				<td>
@@ -1618,7 +1820,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382894" id="p212">Judgment: Hypocritical or helpful</p>
     				</td>
     				<td>
@@ -1637,7 +1839,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382902" id="p217">Holy things are like pearls</p>
     				</td>
     				<td>
@@ -1654,7 +1856,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382909" id="p221">Prayer: Ask, seek, knock</p>
     				</td>
     				<td>
@@ -1673,7 +1875,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382917" id="p226">The way is strait and narrow</p>
     				</td>
     				<td>
@@ -1692,7 +1894,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382925" id="p231">False prophets known by their fruits</p>
     				</td>
     				<td>
@@ -1711,7 +1913,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382934" id="p236">Do the will of the Father</p>
     				</td>
     				<td>
@@ -1730,7 +1932,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382942" id="p241">A house built on a rock or on sand</p>
     				</td>
     				<td>
@@ -1749,7 +1951,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382950" id="p246">Taught having authority, not as Scribes</p>
     				</td>
     				<td>
@@ -1764,7 +1966,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382955" id="p249">Heals centurion’s servant</p>
     				</td>
     				<td>
@@ -1781,7 +1983,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382961" id="p253">Restores widow’s son</p>
     				</td>
     				<td>
@@ -1796,7 +1998,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382966" id="p256">John sends disciples to Jesus</p>
     				</td>
     				<td>
@@ -1813,7 +2015,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382973" id="p260">John: No greater prophet</p>
     				</td>
     				<td>
@@ -1830,7 +2032,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382979" id="p264">Woman anoints Jesus</p>
     				</td>
     				<td>
@@ -1845,7 +2047,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382984" id="p267">Teaches with the Twelve in Galilee</p>
     				</td>
     				<td>
@@ -1860,7 +2062,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382989" id="p270">Beelzebub, blasphemy</p>
     				</td>
     				<td>
@@ -1879,7 +2081,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382997" id="p275">Discourses on signs; Jonah</p>
     				</td>
     				<td>
@@ -1898,7 +2100,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383005" id="p280">Jesus’ mother and brethren</p>
     				</td>
     				<td>
@@ -1922,7 +2124,7 @@
     					<table>
     						<tbody>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128383015" id="p286">Future of the kingdom</p>
     								</td>
     								<td>
@@ -1941,7 +2143,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128383023" id="p291">Discourse from a boat</p>
     								</td>
     								<td>
@@ -1958,7 +2160,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128383030" id="p295">Sower</p>
     								</td>
     								<td>
@@ -1977,7 +2179,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128383035" id="p300">Why parables</p>
     								</td>
     								<td>
@@ -1998,7 +2200,7 @@
     								</td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128383041" id="p306">Candle</p>
     								</td>
     								<td>
@@ -2015,7 +2217,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381694" id="p310">Tares</p>
     								</td>
     								<td>
@@ -2034,7 +2236,7 @@
     								</td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381700" id="p315">Mustard seed</p>
     								</td>
     								<td>
@@ -2053,7 +2255,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381705" id="p320">Leaven</p>
     								</td>
     								<td>
@@ -2070,7 +2272,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381709" id="p324">Treasure in field</p>
     								</td>
     								<td>
@@ -2085,7 +2287,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381712" id="p327">Pearl of great price</p>
     								</td>
     								<td>
@@ -2100,7 +2302,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381715" id="p330">Net</p>
     								</td>
     								<td>
@@ -2115,7 +2317,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381718" id="p333">Householder</p>
     								</td>
     								<td>
@@ -2134,7 +2336,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381721" id="p336">Finishes parables of the kingdom</p>
     				</td>
     				<td>
@@ -2149,7 +2351,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381724" id="p339">Stills a storm</p>
     				</td>
     				<td>
@@ -2168,7 +2370,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383096" id="p344">Casts out a legion of evil spirits</p>
     				</td>
     				<td>
@@ -2187,7 +2389,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383101" id="p349">Raises Jairus’s daughter</p>
     				</td>
     				<td>
@@ -2206,7 +2408,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383106" id="p354">Heals woman with issue of blood</p>
     				</td>
     				<td>
@@ -2225,7 +2427,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383111" id="p359">Heals two blind men</p>
     				</td>
     				<td>
@@ -2240,7 +2442,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383114" id="p362">Devil cast out of dumb man</p>
     				</td>
     				<td>
@@ -2255,7 +2457,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383117" id="p365">Second rejection at Nazareth</p>
     				</td>
     				<td>
@@ -2272,7 +2474,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383121" id="p369">Need for more laborers</p>
     				</td>
     				<td>
@@ -2287,7 +2489,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383124" id="p372">Charge to the Twelve</p>
     				</td>
     				<td>
@@ -2308,7 +2510,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383130" id="p378">John the Baptist’s death</p>
     				</td>
     				<td>
@@ -2325,7 +2527,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381753" id="p382">Herod’s fear of Jesus</p>
     				</td>
     				<td>
@@ -2344,7 +2546,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381758" id="p387"><span class="page-break" data-page="762"></span>Passover: The Twelve return</p>
     				</td>
     				<td>
@@ -2365,7 +2567,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381764" id="p393">Feeds the five thousand</p>
     				</td>
     				<td>
@@ -2386,7 +2588,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381770" id="p399">Jesus walks on the water</p>
     				</td>
     				<td>
@@ -2405,7 +2607,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381775" id="p404">Healings</p>
     				</td>
     				<td>
@@ -2422,7 +2624,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381779" id="p408">Discourse: Bread of life</p>
     				</td>
     				<td>
@@ -2437,7 +2639,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381782" id="p411">Opposition increases</p>
     				</td>
     				<td>
@@ -2452,7 +2654,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381785" id="p414">Discourses on cleanliness</p>
     				</td>
     				<td>
@@ -2503,7 +2705,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382617" id="p9">Heals Canaanite daughter</p>
     				</td>
     				<td>
@@ -2520,7 +2722,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382621" id="p13">Heals many in Galilee</p>
     				</td>
     				<td>
@@ -2537,7 +2739,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382625" id="p17">Feeds four thousand</p>
     				</td>
     				<td>
@@ -2554,7 +2756,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382629" id="p21">Pharisees and Sadducees ask for a sign</p>
     				</td>
     				<td>
@@ -2573,7 +2775,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382634" id="p26">Leaven of Pharisees and Sadducees</p>
     				</td>
     				<td>
@@ -2592,7 +2794,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382639" id="p31">Blind man healed by stages</p>
     				</td>
     				<td>
@@ -2607,7 +2809,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382642" id="p34">Testimony of Peter</p>
     				</td>
     				<td>
@@ -2626,7 +2828,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382647" id="p39">Sealing keys of the kingdom promised</p>
     				</td>
     				<td>
@@ -2641,7 +2843,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382650" id="p42">Prophecy of death and Resurrection</p>
     				</td>
     				<td>
@@ -2660,7 +2862,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382656" id="p47">Peter rebuked</p>
     				</td>
     				<td>
@@ -2677,7 +2879,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382660" id="p51">Take up a cross</p>
     				</td>
     				<td>
@@ -2696,7 +2898,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382665" id="p56">Some not to taste death</p>
     				</td>
     				<td>
@@ -2715,7 +2917,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382670" id="p61">Transfiguration: Sealing keys committed</p>
     				</td>
     				<td>
@@ -2734,7 +2936,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382677" id="p66"><span class="page-break" data-page="763"></span>Heals boy with unclean spirit</p>
     				</td>
     				<td>
@@ -2753,7 +2955,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382687" id="p71">Again foretells death and Resurrection</p>
     				</td>
     				<td>
@@ -2772,7 +2974,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382697" id="p76">Tribute coin from a fish</p>
     				</td>
     				<td>
@@ -2787,7 +2989,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382703" id="p79">Who is greatest in the kingdom</p>
     				</td>
     				<td>
@@ -2806,7 +3008,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382713" id="p84">Offenses and forgiveness</p>
     				</td>
     				<td>
@@ -2825,7 +3027,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382724" id="p89">Parable: Unmerciful servant</p>
     				</td>
     				<td>
@@ -2840,7 +3042,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382730" id="p92">Sacrifice required to follow Jesus</p>
     				</td>
     				<td>
@@ -2891,7 +3093,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382690" id="p9">Urged to attend the Feast of Tabernacles</p>
     				</td>
     				<td>
@@ -2906,7 +3108,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382696" id="p12">Seventy appointed and sent forth</p>
     				</td>
     				<td>
@@ -2923,7 +3125,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382704" id="p16">Jesus upbraids Capernaum, Bethsaida, and Chorazin</p>
     				</td>
     				<td>
@@ -2940,7 +3142,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382712" id="p20">Samaritan village rejects the Apostles</p>
     				</td>
     				<td>
@@ -2955,7 +3157,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382717" id="p23">Jesus sent to save, not destroy</p>
     				</td>
     				<td>
@@ -2970,7 +3172,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382723" id="p26">Jesus attends the Feast of Tabernacles</p>
     				</td>
     				<td>
@@ -2985,7 +3187,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382729" id="p29">The doctrine of the Father</p>
     				</td>
     				<td>
@@ -3000,7 +3202,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382735" id="p32">The Spirit testifies of Jesus’ ministry</p>
     				</td>
     				<td>
@@ -3015,7 +3217,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382739" id="p35">The adulterous woman</p>
     				</td>
     				<td>
@@ -3030,7 +3232,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382742" id="p38">The light of the world</p>
     				</td>
     				<td>
@@ -3045,7 +3247,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382745" id="p41">Heals blind man on the Sabbath</p>
     				</td>
     				<td>
@@ -3060,7 +3262,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382748" id="p44">Parable: The good shepherd</p>
     				</td>
     				<td>
@@ -3077,7 +3279,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382753" id="p48"><span class="page-break" data-page="764"></span>Seventy return; authority confirmed</p>
     				</td>
     				<td>
@@ -3092,7 +3294,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382756" id="p51">Jesus’ prayer and gratitude</p>
     				</td>
     				<td>
@@ -3109,7 +3311,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382760" id="p55">Jesus’ promise of rest</p>
     				</td>
     				<td>
@@ -3124,7 +3326,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382763" id="p58">Parable: The good Samaritan</p>
     				</td>
     				<td>
@@ -3139,7 +3341,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382766" id="p61">Mary and Martha: One thing needful</p>
     				</td>
     				<td>
@@ -3154,7 +3356,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382769" id="p64">Prayer; friend at midnight</p>
     				</td>
     				<td>
@@ -3169,7 +3371,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382775" id="p67">Hear, keep the word</p>
     				</td>
     				<td>
@@ -3184,7 +3386,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382778" id="p70">Beware of the Pharisees</p>
     				</td>
     				<td>
@@ -3199,7 +3401,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382781" id="p73">Parable: The rich fool</p>
     				</td>
     				<td>
@@ -3214,7 +3416,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382784" id="p76">Preparing for the coming of the Lord</p>
     				</td>
     				<td>
@@ -3229,7 +3431,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382787" id="p79">Repentance</p>
     				</td>
     				<td>
@@ -3244,7 +3446,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382790" id="p82">Parable: The barren fig tree</p>
     				</td>
     				<td>
@@ -3259,7 +3461,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382793" id="p85">The Feast of Dedication</p>
     				</td>
     				<td>
@@ -3274,7 +3476,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382796" id="p88">Admirers of the Baptist believe</p>
     				</td>
     				<td>
@@ -3289,7 +3491,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382799" id="p91">Heals woman on Sabbath</p>
     				</td>
     				<td>
@@ -3304,7 +3506,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382802" id="p94">Toward Jerusalem</p>
     				</td>
     				<td>
@@ -3319,7 +3521,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382805" id="p97">“Are there few that be saved?”</p>
     				</td>
     				<td>
@@ -3334,7 +3536,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382808" id="p100">“Tell that fox”</p>
     				</td>
     				<td>
@@ -3349,7 +3551,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382811" id="p103">Heals man on the Sabbath</p>
     				</td>
     				<td>
@@ -3364,7 +3566,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382814" id="p106">Humility, parable of wedding feast</p>
     				</td>
     				<td>
@@ -3379,7 +3581,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382817" id="p109">Parable: The great supper</p>
     				</td>
     				<td>
@@ -3394,7 +3596,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382820" id="p112">Counting the cost</p>
     				</td>
     				<td>
@@ -3414,7 +3616,7 @@
     					<table>
     						<tbody>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382824" id="p116">Lost sheep</p>
     								</td>
     								<td>
@@ -3431,7 +3633,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382834" id="p120">Lost coin</p>
     								</td>
     								<td>
@@ -3446,7 +3648,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382842" id="p123">The prodigal son</p>
     								</td>
     								<td>
@@ -3461,7 +3663,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382849" id="p126">The unjust steward</p>
     								</td>
     								<td>
@@ -3476,7 +3678,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382857" id="p129">Lazarus and the rich man</p>
     								</td>
     								<td>
@@ -3495,7 +3697,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382865" id="p132">Discourse on offenses and faith</p>
     				</td>
     				<td>
@@ -3510,7 +3712,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382872" id="p135">Raises Lazarus from the dead</p>
     				</td>
     				<td>
@@ -3525,7 +3727,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382880" id="p138">Retires to Ephraim</p>
     				</td>
     				<td>
@@ -3540,7 +3742,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382888" id="p141">Heals ten lepers</p>
     				</td>
     				<td>
@@ -3555,7 +3757,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382895" id="p144">Discourse on the kingdom of God</p>
     				</td>
     				<td>
@@ -3575,7 +3777,7 @@
     					<table>
     						<tbody>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382905" id="p148">The unjust judge</p>
     								</td>
     								<td>
@@ -3590,7 +3792,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128382913" id="p151">The Pharisee and the publican</p>
     								</td>
     								<td>
@@ -3609,7 +3811,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382921" id="p154">Pharisees ask about divorce</p>
     				</td>
     				<td>
@@ -3626,7 +3828,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382931" id="p158">Suffer little children</p>
     				</td>
     				<td>
@@ -3645,7 +3847,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382944" id="p163">Rich young ruler</p>
     				</td>
     				<td>
@@ -3664,7 +3866,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382957" id="p168">Reward for forsaking all</p>
     				</td>
     				<td>
@@ -3683,7 +3885,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382969" id="p173">Parable: Laborers in vineyard</p>
     				</td>
     				<td>
@@ -3700,7 +3902,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382980" id="p177">Prophecy of death and Resurrection</p>
     				</td>
     				<td>
@@ -3719,7 +3921,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128382993" id="p182">The greatest is to minister</p>
     				</td>
     				<td>
@@ -3736,7 +3938,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383003" id="p186">Heals two blind men (Bartimaeus)</p>
     				</td>
     				<td>
@@ -3755,7 +3957,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383016" id="p191">Salvation comes to house of Zacchaeus</p>
     				</td>
     				<td>
@@ -3770,7 +3972,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383024" id="p194">Parable: The pounds</p>
     				</td>
     				<td>
@@ -3819,7 +4021,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381517" id="p9">To Jerusalem for Passover</p>
     				</td>
     				<td></td>
@@ -3832,7 +4034,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381521" id="p11">The sixth day before Passover</p>
     				</td>
     				<td>
@@ -3847,7 +4049,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381526" id="p14">Mary anoints Jesus</p>
     				</td>
     				<td>
@@ -3866,7 +4068,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381534" id="p19">Conspiracy against Lazarus</p>
     				</td>
     				<td>
@@ -3881,7 +4083,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381540" id="p22">Prophecy fulfilled</p>
     				</td>
     				<td>
@@ -3900,7 +4102,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381548" id="p27">Triumphal entry</p>
     				</td>
     				<td>
@@ -3921,7 +4123,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381558" id="p33">Pharisees disapprove</p>
     				</td>
     				<td>
@@ -3938,7 +4140,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381565" id="p37">Jesus weeps over Jerusalem</p>
     				</td>
     				<td>
@@ -3953,7 +4155,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381571" id="p40">The fourth day before Passover</p>
     				</td>
     				<td></td>
@@ -3968,7 +4170,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381576" id="p43">Fig tree cursed</p>
     				</td>
     				<td>
@@ -3985,7 +4187,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381583" id="p47">Moneychangers cast out</p>
     				</td>
     				<td>
@@ -4004,7 +4206,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381591" id="p52">The third day before Passover</p>
     				</td>
     				<td></td>
@@ -4017,7 +4219,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381595" id="p54">Withered fig tree and discourse on faith</p>
     				</td>
     				<td>
@@ -4034,7 +4236,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381602" id="p58">Priests challenge Jesus’ authority</p>
     				</td>
     				<td>
@@ -4058,7 +4260,7 @@
     					<table>
     						<tbody>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381608" id="p64">Two sons</p>
     								</td>
     								<td>
@@ -4073,7 +4275,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381611" id="p67">Wicked husbandmen</p>
     								</td>
     								<td>
@@ -4092,7 +4294,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381616" id="p72">Wedding of a king’s son</p>
     								</td>
     								<td>
@@ -4111,7 +4313,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381619" id="p75">Question about tribute</p>
     				</td>
     				<td>
@@ -4130,7 +4332,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381624" id="p80">Marriage and the Resurrection: Sadducees</p>
     				</td>
     				<td>
@@ -4149,7 +4351,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381629" id="p85">Great commandment: Pharisees</p>
     				</td>
     				<td>
@@ -4166,7 +4368,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381633" id="p89">How is Christ both David’s Lord and son?</p>
     				</td>
     				<td>
@@ -4185,7 +4387,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381638" id="p94"><span class="page-break" data-page="767"></span>Denunciation of hypocrisy</p>
     				</td>
     				<td>
@@ -4204,7 +4406,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381643" id="p99">Widow’s mite</p>
     				</td>
     				<td>
@@ -4221,7 +4423,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381647" id="p103">Jesus’ lament over Jerusalem</p>
     				</td>
     				<td>
@@ -4238,7 +4440,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381651" id="p107">Greeks wish to see Jesus</p>
     				</td>
     				<td>
@@ -4253,7 +4455,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381654" id="p110">Discourse: Jesus sent by the Father</p>
     				</td>
     				<td>
@@ -4268,7 +4470,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381657" id="p113">Destruction of Jerusalem, signs of Second Coming</p>
     				</td>
     				<td>
@@ -4294,7 +4496,7 @@
     					<table>
     						<tbody>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381664" id="p120">Ten virgins</p>
     								</td>
     								<td>
@@ -4313,7 +4515,7 @@
     								</td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381669" id="p125">Talents</p>
     								</td>
     								<td>
@@ -4328,7 +4530,7 @@
     								<td></td>
     							</tr>
     							<tr>
-    								<td>
+    				<td class="row-header">
     									<p data-aid="128381672" id="p128">Sheep, goats</p>
     								</td>
     								<td>
@@ -4347,7 +4549,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381675" id="p131">The second day before Passover (events of this day are unknown)</p>
     				</td>
     				<td></td>
@@ -4358,7 +4560,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381676" id="p132">The last day before Passover</p>
     				</td>
     				<td></td>
@@ -4373,7 +4575,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381679" id="p135">Jesus’ prophecy of the Crucifixion</p>
     				</td>
     				<td>
@@ -4388,7 +4590,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381682" id="p138">Conspiracy at Caiaphas’s palace</p>
     				</td>
     				<td>
@@ -4407,7 +4609,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381687" id="p143">Judas’s conspiracy to betray Jesus</p>
     				</td>
     				<td>
@@ -4426,7 +4628,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383043" id="p148">The first day of unleavened bread</p>
     				</td>
     				<td>
@@ -4445,7 +4647,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383048" id="p153">The Last Supper begins</p>
     				</td>
     				<td>
@@ -4466,7 +4668,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383054" id="p159">Strife over greatness</p>
     				</td>
     				<td>
@@ -4481,7 +4683,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383057" id="p162">Jesus washes disciples’ feet</p>
     				</td>
     				<td>
@@ -4496,7 +4698,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383060" id="p165">Peter’s protest</p>
     				</td>
     				<td>
@@ -4513,7 +4715,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383064" id="p169">Jesus’ example</p>
     				</td>
     				<td>
@@ -4528,7 +4730,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383067" id="p172">“One of you shall betray me”</p>
     				</td>
     				<td>
@@ -4549,7 +4751,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383073" id="p178">A new commandment</p>
     				</td>
     				<td>
@@ -4564,7 +4766,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383076" id="p181"><span class="page-break" data-page="768"></span>Sacrament instituted</p>
     				</td>
     				<td>
@@ -4583,7 +4785,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383081" id="p186">Discourse on the Comforter</p>
     				</td>
     				<td>
@@ -4598,7 +4800,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383084" id="p189">Departure to Mount of Olives</p>
     				</td>
     				<td>
@@ -4619,7 +4821,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383090" id="p195">Peter’s denial foretold</p>
     				</td>
     				<td>
@@ -4640,7 +4842,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381729" id="p201">The true vine</p>
     				</td>
     				<td>
@@ -4655,7 +4857,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381732" id="p204">Love one another</p>
     				</td>
     				<td>
@@ -4670,7 +4872,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381735" id="p207">Hatred of the world</p>
     				</td>
     				<td>
@@ -4685,7 +4887,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381738" id="p210">The Spirit of truth testifies</p>
     				</td>
     				<td>
@@ -4700,7 +4902,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381741" id="p213">Warnings to the Apostles</p>
     				</td>
     				<td>
@@ -4715,7 +4917,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381744" id="p216">The Comforter</p>
     				</td>
     				<td>
@@ -4730,7 +4932,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381747" id="p219">Opposition: Joy and sorrow</p>
     				</td>
     				<td>
@@ -4745,7 +4947,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128381750" id="p222">Jesus’ intercessory prayer</p>
     				</td>
     				<td>
@@ -4760,7 +4962,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383134" id="p225">Jesus’ suffering and prayers</p>
     				</td>
     				<td>
@@ -4783,7 +4985,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383141" id="p232">Judas’s betrayal</p>
     				</td>
     				<td>
@@ -4804,7 +5006,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383147" id="p238">Arresting officers fall</p>
     				</td>
     				<td>
@@ -4819,7 +5021,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383150" id="p241">Peter defends Jesus with a sword</p>
     				</td>
     				<td>
@@ -4840,7 +5042,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383156" id="p247">Jesus arrested and disciples flee</p>
     				</td>
     				<td>
@@ -4861,7 +5063,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383162" id="p253">Hearing before chief priests</p>
     				</td>
     				<td>
@@ -4882,7 +5084,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383168" id="p259">Peter’s denial</p>
     				</td>
     				<td>
@@ -4903,7 +5105,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383174" id="p265">Soldiers mock Jesus</p>
     				</td>
     				<td>
@@ -4918,7 +5120,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383177" id="p268">Hearing before Caiaphas</p>
     				</td>
     				<td>
@@ -4939,7 +5141,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383183" id="p274">Hearing before Pilate</p>
     				</td>
     				<td>
@@ -4960,7 +5162,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383189" id="p280">Judas’s remorse and death</p>
     				</td>
     				<td>
@@ -4975,7 +5177,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383192" id="p283">Hearing before Herod</p>
     				</td>
     				<td>
@@ -4990,7 +5192,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383195" id="p286"><span class="page-break" data-page="769"></span>Second hearing before Pilate</p>
     				</td>
     				<td>
@@ -5009,7 +5211,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383200" id="p291">A murderer released</p>
     				</td>
     				<td>
@@ -5030,7 +5232,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383206" id="p297">Blood guiltiness</p>
     				</td>
     				<td>
@@ -5049,7 +5251,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383211" id="p302">Jesus scourged and mocked</p>
     				</td>
     				<td>
@@ -5068,7 +5270,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383216" id="p307">Jesus taken to Golgotha</p>
     				</td>
     				<td>
@@ -5089,7 +5291,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383222" id="p313">The Crucifixion</p>
     				</td>
     				<td>
@@ -5112,7 +5314,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383229" id="p320">Soldiers cast lots for Jesus’ garments</p>
     				</td>
     				<td>
@@ -5133,7 +5335,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383235" id="p326">The sign: King of the Jews</p>
     				</td>
     				<td>
@@ -5154,7 +5356,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383241" id="p332">Jesus speaks to His mother</p>
     				</td>
     				<td>
@@ -5169,7 +5371,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383244" id="p335">Darkness: Sixth to ninth hour</p>
     				</td>
     				<td>
@@ -5188,7 +5390,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383249" id="p340">Death of Jesus Christ</p>
     				</td>
     				<td>
@@ -5209,7 +5411,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383255" id="p346">Earthquake: Veil of temple rent</p>
     				</td>
     				<td>
@@ -5228,7 +5430,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383260" id="p351">Side pierced by a spear</p>
     				</td>
     				<td>
@@ -5243,7 +5445,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383263" id="p354">Passover scripture fulfilled</p>
     				</td>
     				<td>
@@ -5258,7 +5460,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383266" id="p357">Watchers near the cross</p>
     				</td>
     				<td>
@@ -5277,7 +5479,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383271" id="p362">Jesus’ burial</p>
     				</td>
     				<td>
@@ -5298,7 +5500,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383277" id="p368">Chief priests and Pharisees seal the tomb</p>
     				</td>
     				<td>
@@ -5313,7 +5515,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383281" id="p371">Earthquake, angels open tomb</p>
     				</td>
     				<td>
@@ -5330,7 +5532,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383285" id="p375">Women find the open tomb</p>
     				</td>
     				<td>
@@ -5351,7 +5553,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383291" id="p381">Angels proclaim: “He is risen”</p>
     				</td>
     				<td>
@@ -5370,7 +5572,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383296" id="p386"><span class="page-break" data-page="770"></span>Women hurry to tell the Apostles</p>
     				</td>
     				<td>
@@ -5391,7 +5593,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383302" id="p392">Peter and John run to the tomb</p>
     				</td>
     				<td>
@@ -5408,7 +5610,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383306" id="p396">Jesus appears to Mary Magdalene</p>
     				</td>
     				<td>
@@ -5425,7 +5627,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383310" id="p400">Jesus appears to other women</p>
     				</td>
     				<td>
@@ -5440,7 +5642,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383313" id="p403">Others resurrected and appear unto many</p>
     				</td>
     				<td>
@@ -5455,7 +5657,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383316" id="p406">Officials bribe soldiers</p>
     				</td>
     				<td>
@@ -5470,7 +5672,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383320" id="p409">Jesus appears to two disciples</p>
     				</td>
     				<td>
@@ -5487,7 +5689,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383326" id="p413">Evening: Jesus appears to disciples</p>
     				</td>
     				<td>
@@ -5506,7 +5708,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383331" id="p418">Thomas, absent, does not believe</p>
     				</td>
     				<td>
@@ -5521,7 +5723,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383334" id="p421">Eight days later: With Thomas</p>
     				</td>
     				<td>
@@ -5536,7 +5738,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383337" id="p424">Purpose of John’s Gospel</p>
     				</td>
     				<td></td>
@@ -5549,7 +5751,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383339" id="p426">Peter: “I go a fishing”</p>
     				</td>
     				<td>
@@ -5564,7 +5766,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383342" id="p429">Peter inquires about John</p>
     				</td>
     				<td>
@@ -5579,7 +5781,7 @@
     				<td></td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383345" id="p432">Testimony about John</p>
     				</td>
     				<td></td>
@@ -5594,7 +5796,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383348" id="p435">The great commission to the Twelve</p>
     				</td>
     				<td>
@@ -5613,7 +5815,7 @@
     				</td>
     			</tr>
     			<tr>
-    				<td>
+    				<td class="row-header">
     					<p data-aid="128383353" id="p440">Ascension, proclamation</p>
     				</td>
     				<td>

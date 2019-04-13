@@ -7,4 +7,34 @@ table {
 
 td, th {
   border: 1px solid gray;
+  vertical-align: top;
+}
+
+td.row-header {
+  vertical-align: middle;
+}
+
+th:nth-of-type(2),
+td:nth-of-type(2) {
+  width: 100px;
+}
+
+del {
+  background-color: lightpink;
+}
+
+ins {
+  /* background-color: lightgreen; */
+  text-decoration: none;
+}
+
+tr.diff td div {
+  height: 20px;
+  overflow: hidden;
+  transition: height 0.5s ease-out;
+}
+
+tr.diff.expanded td div {
+  height: auto;
+  transition: height 0.5s ease-out;
 }
